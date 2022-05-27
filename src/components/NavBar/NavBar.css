@@ -1,0 +1,30 @@
+.div__navbar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: .5rem;
+    justify-content: center;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    text-decoration: underline;
+    justify-content: center;
+    list-style: none;
+    font-size: 2rem;
+    width: 25%;
+    color: #fff;
+    padding: 0rem;
+    margin: 1rem 0rem;
+
+}
+
+.navBar__li{
+    padding: 0 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}

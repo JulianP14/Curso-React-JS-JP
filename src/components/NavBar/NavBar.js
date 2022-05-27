@@ -1,3 +1,4 @@
+import './NavBar.css'
 import CartWidget from "../CartWidget/CartWidget.js"
 
 
