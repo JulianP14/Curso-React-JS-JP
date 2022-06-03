@@ -9,10 +9,10 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer.
 function App() {
   return (
     <div className="App">
-      <ItemListContainer greeting='DE CUERO'/>
       <header className="App-header">
         <NavBar/>
       </header>
+      <ItemListContainer greeting='DE CUERO'/>
     </div>
   );
 }
