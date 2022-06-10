@@ -1,33 +1,46 @@
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
-import { obtenerProductos } from '../../api.js'
+import { obtenerProductos, obtenerProductosByCategory } from '../../api.js'
 import ItemList from '../ItemList/ItemList'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = (props) => {
     const [productos, setProductos] = useState ([])
+    const [loading, setLoading] = useState(true)
+
+    const {categoryId} = useParams()
 
     useEffect (() => {
-        obtenerProductos().then(response =>{
-            setProductos(response)
-        })
-    }, [])
+        setLoading(true)
+        
+        if(!categoryId) {
+            obtenerProductos().then(prods =>{
+                setProductos(prods)
+            }).catch(error =>{
+                console.error(error)
+            }).finally(() => {
+                setLoading(false)
+            })
+        } else {
+            obtenerProductosByCategory(categoryId).then(prods =>{
+                setProductos(prods)
+            }).catch(error =>{
+                console.error(error)
+            }).finally(() => {
+                setLoading(false)
+            })
+        }
+    }, [categoryId])
 
-/*     const productosComponents = productos.map (producto =>{
-        return (
-            <li key={producto.id}>
-                {producto.name}
-            </li>
-        )
-    }) */
+    if(loading){
+        return<h2>Cargando...</h2>
+    }
 
 
     return(
         <div>
-            <h1 id="titulo">{props.greeting}</h1>
             <ItemList productos={productos}/>
-            {/* <ul>
-                {productos.map(producto => <li key={producto.id}>{producto.name}</li>)}
-            </ul> */}
+            {productos.length > 0 ? <ItemList productos = {productos}/> : <h2>No hay productos</h2>}
         </div>
     )
 }

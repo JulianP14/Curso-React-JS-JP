@@ -6,6 +6,20 @@
     justify-content: center;
 }
 
+.DN__contenedor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+
+.DNC__titulo{
+    font-size: 2.5rem;
+    color: #fff;
+
+}
+
 .navBar{
     display: flex;
     flex-direction: row;
@@ -21,10 +35,22 @@
 }
 
 .navBar__li{
-    padding: 0 1rem;
+    padding: 2rem 1rem;
+    
 }
 
 a{
     text-decoration: none;
     color: inherit;
+}
+
+.clickNavBar{
+    background-color: rgb(29, 13, 5);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.noClickNavBar{
+    background-color: none;
+    padding: 1rem;
+    
 }

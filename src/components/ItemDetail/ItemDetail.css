@@ -1,0 +1,38 @@
+.tituloItemDetail{
+    border: 1px solid #000;
+    background-color: #fff;
+    margin: 0rem 40rem;
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    font-size: 2.5rem;
+}
+
+.TID__divImg{
+/*     border: 1px solid #000; */
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.TID__divImg img{
+/*     border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    
+}
+
+.TID__price{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.TID__description{
+    background-color: #fff;
+    font-size: 2rem;
+    margin: 1rem;
+}

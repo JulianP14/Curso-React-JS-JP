@@ -1,8 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ecommerce de artículos de cuero
 
-## Available Scripts
+## Comandos para ejecutar la APP
 
 In the project directory, you can run:
 
