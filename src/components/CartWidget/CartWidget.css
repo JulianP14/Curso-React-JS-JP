@@ -1,7 +1,16 @@
 .cartWidget{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    padding: 0 0 0 2rem;
+    width: 100%;
     color: #fff;
+}
+
+.cartWidget p{
+    font-size: 2rem;
+}
+
+.cartWidget img {
+    width: 10%;
+    padding: 1rem; 
 }

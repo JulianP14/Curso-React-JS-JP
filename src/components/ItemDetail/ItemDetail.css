@@ -26,13 +26,14 @@
     
 }
 
-.TID__price{
+.TID__description{
     font-size: 2rem;
     color: #fff;
 }
 
-.TID__description{
+.TID__price{
     background-color: #fff;
     font-size: 2rem;
     margin: 1rem;
+    padding: 1rem;
 }

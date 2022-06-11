@@ -1,27 +1,27 @@
 .contenedorProductos{
-    border: .1rem solid #fff;
-    padding: 1rem;
+    background-color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 .listaProductos{
-    border: .1rem solid #fff;
+    background-color: #683939;
+    margin: 1rem 0;
     font-size: 2.5rem;
     color: #fff;
-    display: flex;
-    flex-direction: column;
+    width: 75%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
     
 }
 
-li{
-    border: .1rem solid #fff;
+.listaProductos li{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
 }
-img {
-    width: 10%;
+.listaProductos img {
+    width: 40%;
     padding: 1rem;
 }

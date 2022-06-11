@@ -14,8 +14,8 @@ const ItemListContainer = (props) => {
         setLoading(true)
         
         if(!categoryId) {
-            obtenerProductos().then(prods =>{
-                setProductos(prods)
+            obtenerProductos().then(response =>{
+                setProductos(response)
             }).catch(error =>{
                 console.error(error)
             }).finally(() => {

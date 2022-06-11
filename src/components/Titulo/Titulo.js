@@ -1,10 +1,10 @@
 import './Titulo.css'
 
-const Titulo = (props) => {
+const Titulo = ({greeting}) => {
     
     return(
         <div>
-            <h1 id="titulo">{props.greeting}</h1>
+            <h1 id="titulo">{greeting}</h1>
         </div>
     )
 }

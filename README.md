@@ -2,7 +2,7 @@
 
 Ecommerce de artículos de cuero
 
-## Comandos para ejecutar la APP
+## Comandos para ejecutar la APP    
 
 In the project directory, you can run:
 

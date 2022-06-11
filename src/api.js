@@ -10,7 +10,7 @@ const productos = [
     },
     {
         id: '2', 
-        name: 'Billetera Cuero 2', 
+        name: 'Billetera Cuero - Tommy Hilfiger', 
         price: 3500, 
         category: 'Billeteras', 
         img: 'https://5.imimg.com/data5/HM/XG/MY-3701638/mens-wallet-500x500.jpg', 
@@ -18,7 +18,7 @@ const productos = [
     },
     {
         id: '3', 
-        name: 'Billetera Cuero 3', 
+        name: 'Billetera Cuero - Big Cow', 
         price: 3000, 
         category: 'Billeteras', 
         img: 'https://image.made-in-china.com/202f0j00oPHfNySJPZbj/Genuine-Leather-Short-Vertical-Men-s-Wallet.jpg', 
@@ -37,7 +37,7 @@ const productos = [
     {
         id: '5', 
         name: 'Morral Cuero 2', 
-        price: 17500, 
+        price: 20500, 
         category: 'Morrales', 
         img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/028/257/products/3392_0002_layer-71-4771eabb330a652e4815983875839848-1024-1024.jpg', 
         stock: 5, 
@@ -47,7 +47,7 @@ const productos = [
         
         id: '6', 
         name: 'Cartera Cuero 1', 
-        price: 20000, 
+        price: 25000, 
         category: 'Carteras', 
         img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/028/257/products/4395-dy-1_0001_layer-821-dac856bb215581189415132868469367-1024-1024.jpg', 
         stock: 3, 
