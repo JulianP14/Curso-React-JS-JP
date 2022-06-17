@@ -1,6 +1,6 @@
 import './ItemListContainer.css'
 import { useState, useEffect } from 'react'
-import { obtenerProductos, obtenerProductosByCategory } from '../../api.js'
+import { obtenerProductos, obtenerProductosByCategory } from '../../Api.js'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 
@@ -39,8 +39,10 @@ const ItemListContainer = (props) => {
 
     return(
         <div>
-            <ItemList productos={productos}/>
-            {productos.length > 0 ? <ItemList productos = {productos}/> : <h2>No hay productos</h2>}
+            <h1>{props.greeting}</h1>
+            {
+            productos.length > 0 ? <ItemList productos={productos}/> : <h2>No hay productos</h2>
+            }
         </div>
     )
 }

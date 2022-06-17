@@ -1,3 +1,6 @@
+*{
+    text-align: center;
+}
 .contenedorProductos{
     background-color: #fff;
     display: flex;
@@ -6,13 +9,12 @@
 }
 .listaProductos{
     background-color: #683939;
-    margin: 1rem 0;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #fff;
     width: 75%;
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    
+
 }
 
 .listaProductos li{
@@ -20,8 +22,28 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+    
 }
 .listaProductos img {
-    width: 40%;
-    padding: 1rem;
+    width: 45%;
+    border: .1rem solid black;
+
+}
+
+.listaProductos p {
+    font-size: 2rem;
+    
+}
+
+.listaProductos a {
+    width: 100%;
+    background-color: #fff;
+    color: #0d0c57;
+}
+
+.listaProductos h2 {
+    width: 100%;
+    background-color: #fff;
+    color: #0d0c57;
+    margin-top: 2rem;
 }

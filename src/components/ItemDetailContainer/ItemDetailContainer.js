@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { obtenerProductosById } from "../../api"
+import { obtenerProductosById } from "../../Api"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 
@@ -14,12 +14,12 @@ const ItemDetailContainer = () => {
             setProducto(response)
 
         })
-    }, [])
+    }, [productoId])
 
 
     return (
         <>
-            
+            <h2>Detalle del Producto</h2>
             <ItemDetail {...producto}/>
         </>
     )

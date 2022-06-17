@@ -1,0 +1,41 @@
+.contador{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
+.controls{
+    width: 1.7%;
+}
+
+.botonContador{
+    padding: .5rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.botonContadorMas{
+    padding: .5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.numeroContador{
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0rem;
+}
+
+.botonReset{
+    padding: 1rem;
+    background-color: #ffff;
+    text-transform: uppercase;
+    color: #000;
+    border: .1rem solid #000;
+    border-radius: 1rem ;
+}
+
+.botonReset:hover, .botonContador, .botonContadorMas{
+    cursor: pointer;
+}

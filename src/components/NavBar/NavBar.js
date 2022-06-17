@@ -1,6 +1,7 @@
 import './NavBar.css'
 import CartWidget from "../CartWidget/CartWidget.js"
 import { Link, NavLink } from 'react-router-dom'
+/* import NavBarOptions from '../../Helpers/strings' */
 
 
 const NavBar = () => {
@@ -17,7 +18,6 @@ const NavBar = () => {
                     <NavLink to='/category/cinturones' className={({isActive }) => isActive ? 'clickNavBar' : 'noClickNavBar'}>Cinturones</NavLink>
                 </ul>
                 <CartWidget />
-                    
             </div>
         </nav>
     )
