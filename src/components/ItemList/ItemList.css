@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 1rem;
 }
 .listaProductos{
     background-color: #683939;
@@ -13,7 +14,7 @@
     color: #fff;
     width: 75%;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 33% 34% 33%;
 
 }
 
@@ -27,6 +28,7 @@
 .listaProductos img {
     width: 45%;
     border: .1rem solid black;
+    margin: 1rem;
 
 }
 
@@ -39,11 +41,42 @@
     width: 100%;
     background-color: #fff;
     color: #0d0c57;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: auto;
+    text-transform: capitalize;
 }
 
 .listaProductos h2 {
-    width: 100%;
     background-color: #fff;
     color: #0d0c57;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+
+}
+
+.listaProductos footer{
+    margin: 2rem;
+    height: auto;
+}
+
+.listaProductos div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listaProductos header {
+    width: 90%;
+}
+
+.contenedorGlobal{
+    border: .1rem solid #fff;
+}
+
+.contenedorVisual{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
 }

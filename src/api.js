@@ -14,7 +14,8 @@ const productos = [
         price: 3500, 
         category: 'billeteras', 
         img: 'https://5.imimg.com/data5/HM/XG/MY-3701638/mens-wallet-500x500.jpg', 
-        stock: 3, description: 'Billetera Tommy Hilfiger'
+        stock: 15, 
+        description: 'Billetera Tommy Hilfiger'
     },
     {
         id: '3', 

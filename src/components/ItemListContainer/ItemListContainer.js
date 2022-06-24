@@ -4,33 +4,41 @@ import { obtenerProductos, obtenerProductosByCategory } from '../../Api.js'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { database } from '../../services/firebase'
+
 const ItemListContainer = (props) => {
     const [productos, setProductos] = useState ([])
     const [loading, setLoading] = useState(true)
+    const [title, setTitle] = useState('Bienvenidos')
 
     const {categoryId} = useParams()
 
     useEffect (() => {
         setLoading(true)
-        
-        if(!categoryId) {
-            obtenerProductos().then(response =>{
-                setProductos(response)
-            }).catch(error =>{
-                console.error(error)
-            }).finally(() => {
-                setLoading(false)
+
+        const collectionRef = categoryId ? ( 
+            query(collection(database, 'productos'), where ('category', '==', categoryId))) 
+            : (collection (database, 'productos'))
+
+        getDocs (collectionRef).then(response => {  
+            const productosFromFirestore = response.docs.map(doc => {
+                return {id: doc.id, ...doc.data()}
             })
-        } else {
-            obtenerProductosByCategory(categoryId).then(prods =>{
-                setProductos(prods)
-            }).catch(error =>{
-                console.error(error)
-            }).finally(() => {
-                setLoading(false)
-            })
-        }
+            setProductos(productosFromFirestore)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
+            setLoading(false)
+        })
+                
     }, [categoryId])
+
+        useEffect(() =>{
+            setTimeout(() => {
+                setTitle('Nuestros Productos')
+            }, 3000);
+        })
 
     if(loading){
         return<h2>Cargando...</h2>
@@ -39,7 +47,7 @@ const ItemListContainer = (props) => {
 
     return(
         <div>
-            <h1>{props.greeting}</h1>
+            <h1>{title}</h1>
             {
             productos.length > 0 ? <ItemList productos={productos}/> : <h2>No hay productos</h2>
             }

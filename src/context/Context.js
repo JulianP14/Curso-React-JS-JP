@@ -24,11 +24,15 @@ export const CartProvider = ({children}) => {
 
     const removerItem = (id) => {
         const carritoSinProducto = carrito.filter(prod => prod.id !== id)
-        setCarrito(carritoSinProducto)
+        setCarrito(carritoSinProducto)  //esta f() sirve para remover items del carrito tambien
     }
 
     const estaEnCarrito = (id) => {
         return carrito.some(prod => prod.id === id )
+    }
+
+    const borrarCarrito = () => {
+        setCarrito ([])
     }
 
     return (
@@ -38,6 +42,7 @@ export const CartProvider = ({children}) => {
             agregarItem,
             removerItem,
             estaEnCarrito,
+            borrarCarrito,
         }}>
             {children}
         </CartContext.Provider>

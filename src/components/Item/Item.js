@@ -5,21 +5,19 @@ import { Context } from '../../App'
 const Item = ({id, name, img, price}) => {
     
     return (
-        <div>
+        <div className='contenedorGlobal'>
             <header>
                 <h2>{name}</h2>
             </header>
-            <div>
+            <div className='contenedorVisual'>
                 <img src={img} alt={name}/>
-            </div>
-            <div>
                 <p>
                     Precio: ${price}
                 </p>
+                <footer>
+                    <Link to={`/detalles/${id}`}> Ver detalle </Link>
+                </footer>
             </div>
-            <footer>
-                <Link to={`/detalles/${id}`}> Ver Mas </Link>
-            </footer>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import './ItemCount.css'    
-/* import { stockProductos } from "../../Api"; */
 
 const ItemCount = ({stock = 0, inicial = 1, onAdd})=> {
     const [Q, setQ] = useState (inicial)
