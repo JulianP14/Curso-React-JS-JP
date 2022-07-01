@@ -1,5 +1,5 @@
 const productos = [
-    {
+    /* {
         id: '1', 
         name: 'Billetera Cuero - Hammer', 
         price: 2500, 
@@ -53,7 +53,7 @@ const productos = [
         img: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/028/257/products/4395-dy-1_0001_layer-821-dac856bb215581189415132868469367-1024-1024.jpg', 
         stock: 3, 
         description: 'Cartera Femenina'
-    }
+    } */
 ]
 
 

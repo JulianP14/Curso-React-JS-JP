@@ -29,7 +29,7 @@ const Notification = ({message, severity, otherClass}) => {
 const NotificationContext = createContext ();
     export const NotificationProvider = ({children}) => {
         const [msgSett, setMsgSett] = useState ({
-            severity: "success",
+            severity: 'success',
             message: ''
         })
 
@@ -54,5 +54,5 @@ const NotificationContext = createContext ();
     }
 
     export const useNotification = () => {
-        return useContext (NotificationContext)
+        return useContext(NotificationContext)
     }

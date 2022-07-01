@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
     useEffect (() => {
         const docRef = doc(database, 'productos', productoId)
 
-        getDoc(docRef).then(response => {
+        getDoc(docRef).then(doc => {
             const productosFromFirestore = {id: doc.id, ...doc.data()}
             setProducto(productosFromFirestore)
         }).catch(error => {
