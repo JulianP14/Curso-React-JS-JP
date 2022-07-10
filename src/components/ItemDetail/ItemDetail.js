@@ -3,18 +3,18 @@ import { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 import CartContext from '../../context/CartContext'
 import {Link} from 'react-router-dom'
-import { useNotification } from '../../notification/Notification'
+import { useNotification } from '../../notification/Notification.js'
 
 
 const ItemDetail = ({id, name, category, stock, img, price, description}) => {
     const [Qadded, setQadded] = useState(0)
-    const {addItem} = useContext(CartContext)
+    const {agregarItem} = useContext(CartContext)
     const setNotification = useNotification()
 
     const handleOnAdd = (Q) => {
-        debugger
+
         setNotification('success', `Se agregaron ${Q} ${name}`)
-        addItem({id, name, price, Q})
+        agregarItem({id, name, price, Q})
         setQadded(Q)
     }
 
@@ -30,16 +30,15 @@ const ItemDetail = ({id, name, category, stock, img, price, description}) => {
                         ${price}
                     </p>
                     <p className='TID__description'>
-                        {description}
+                        Descripcion:{description}
                     </p>
                     <p>
-                        {category}
+                        Categoria:{category}
                     </p>
                 </div>    
             </div>
             <div>
-                {Qadded === 0 ? <ItemCount stock={stock} onAdd={() =>
-                handleOnAdd(Qadded)}/> : <Link to='/cart'>Finalizar Compra</Link> }
+                {Qadded === 0 ? <ItemCount stock={stock} onAdd={() => handleOnAdd(Qadded)}/> : <Link to='/cart'>Finalizar Compra</Link> }
             </div>
         </div>
     )

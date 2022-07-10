@@ -1,14 +1,13 @@
 import { useState, useContext } from "react"
-import CartContext from "../../context/Context"
-import CartItemList from "../../context/CartItemList"
+import CartContext from "../../context/CartContext"
+import CartItemList from "../CartItemList/CartItemList"
 import { useNotification } from "../../notification/Notification"
 import { addDoc, collection, writeBatch, getDocs, query, where, documentId, } from 'firebase/firestore'
-import { db } from '../../services/firebase/index'
+import { database } from '../../services/firebase/index'
 
 const Carrito = () => {
     const [loading, setLoading] = useState(false)
-    const { carrito, totalQ, getTotal, clearCarrito } = useContext
-    (CartContext)
+    const { carrito, totalQ, getTotal, clearCarrito } = useContext (CartContext)
 
     const total = getTotal ()
     const setNotification = useNotification ()
@@ -27,10 +26,10 @@ const Carrito = () => {
             total: total
         }
 
-        const batch = writeBatch (db)
+        const batch = writeBatch (database)
         const ids = carrito.map(prod => prod.id)
         const sinStock = []
-        const collectionRef = collection (db, 'products')
+        const collectionRef = collection (database, 'products')
 
         getDocs (query(collectionRef, where(documentId(), 'in', ids)))
             .then(response => {
@@ -38,7 +37,6 @@ const Carrito = () => {
                     const dataDoc = doc.data()
                     const prod = carrito.find(prod => prod.id === doc.id)
                     const prodQ = prod.quantity
-
                     if(dataDoc.stock >= prodQ) {
                         batch.update(doc.ref, {stock: dataDoc.stock - prodQ})
                     } else {
@@ -47,7 +45,7 @@ const Carrito = () => {
                 })
             }).then(() =>{
                 if(sinStock.length === 0){
-                    const collectionRef = collection (db, 'orders')
+                    const collectionRef = collection (database, 'orders')
                     return addDoc (collectionRef, objOrden)
                 } else {
                     return Promise.reject({type: 'sin_stock',

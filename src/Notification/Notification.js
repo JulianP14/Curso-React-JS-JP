@@ -1,5 +1,5 @@
 import './Notification.css'
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext } from "react"
 
 const Notification = ({message, severity, otherClass}) => {
     const estiloNotificacion = {
@@ -18,7 +18,7 @@ const Notification = ({message, severity, otherClass}) => {
         className: `${severity === 'error' ? 'Error' : 'Success'} ${otherClass || ''}`
     } : {}
 
-        if (message === '') 
+        if (message === '') return
             return (
                 <div {...sett}>
                     {message}
@@ -26,7 +26,8 @@ const Notification = ({message, severity, otherClass}) => {
             )
 }
 
-const NotificationContext = createContext ();
+const NotificationContext = createContext ()
+
     export const NotificationProvider = ({children}) => {
         const [msgSett, setMsgSett] = useState ({
             severity: 'success',

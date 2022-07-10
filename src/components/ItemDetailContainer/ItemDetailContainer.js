@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react"
-import { obtenerProductosById } from "../../Api"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
-
 import { getDoc, doc } from "firebase/firestore"
 import { database } from "../../services/firebase"
-
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState()
@@ -24,11 +21,6 @@ const ItemDetailContainer = () => {
         }).finally(() => {
             setLoading(false)
         })
-
-        /* obtenerProductosById(productoId).then(response => {
-            setProducto(response)
-
-        }) */
     }, [productoId])
 
     if(loading) {
@@ -37,7 +29,6 @@ const ItemDetailContainer = () => {
         )
     }
 
-
     return (
         <>
             <h2>Detalle del Producto</h2>
@@ -45,6 +36,5 @@ const ItemDetailContainer = () => {
         </>
     )
 }
-
 
 export default ItemDetailContainer

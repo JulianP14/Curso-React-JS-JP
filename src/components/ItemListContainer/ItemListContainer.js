@@ -1,14 +1,35 @@
 import './ItemListContainer.css'
-import { useState, useEffect } from 'react'
-import { obtenerProductos, obtenerProductosByCategory } from '../../Api.js'
+/* import { useState, useEffect } from 'react' */
+/* import { getDocs, collection, query, where } from 'firebase/firestore'
+import { database } from '../../services/firebase' */
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-
-import { getDocs, collection, query, where } from 'firebase/firestore'
-import { database } from '../../services/firebase'
+import { useAsync } from '../../hooks/useAsync'
+import { obtenerProductos } from '../../services/firebase/firestore'
 
 const ItemListContainer = (props) => {
-    const [productos, setProductos] = useState ([])
+    const {categoryId} = useParams ()
+    const {isLoading, data, error} = useAsync(() => obtenerProductos(categoryId), [categoryId])
+    
+        if(isLoading) {
+            return <h2>Cargando...</h2>
+        }
+        if (error) {
+            return <h2>Hubo un problema cargando los productos</h2>
+        }
+
+        return (
+            <div>
+                <h2>{props.greeting}</h2>
+                {
+                data.length > 0 
+                ? <ItemList productos={data}/> 
+                : <h2>No se encontraron productos</h2>
+                }
+            </div>
+        )
+}
+/*     const [productos, setProductos] = useState ([])
     const [loading, setLoading] = useState(true)
     const [title, setTitle] = useState('Bienvenidos')
 
@@ -53,6 +74,6 @@ const ItemListContainer = (props) => {
             }
         </div>
     )
-}
+} */
 
 export default ItemListContainer

@@ -1,4 +1,5 @@
 export const createAdaptedProductFromFirestore = (doc) => {
+    
     const data = doc.data ()
     const productosFromFirestore = {
         id: doc.id,

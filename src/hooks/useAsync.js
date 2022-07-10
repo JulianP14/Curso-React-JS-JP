@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import { useResolvedPath } from "react-router";
 
 export const useAsync = (asyncFn, dependencies = []) => {
-    const [d, setD] = useState ()
-    const [error, setError] = useState ()
-    const [isLoading, setIsLoading] = useState (true)
+    const [data, setData] = useState()
+    const [error, setError] = useState()
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         setIsLoading (true)
+
         asyncFn().then(response => {
-            setD(response)
+            setData(response)
         }).catch(error =>{
             setError(error)
         }).finally(() => {
@@ -17,9 +17,9 @@ export const useAsync = (asyncFn, dependencies = []) => {
         })
     }, dependencies)
 
-        return(
-            isLoading,
-            d,
-            error
-        )
+    return{
+        isLoading,
+        data,
+        error
+    }
 }        
