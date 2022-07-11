@@ -1,0 +1,27 @@
+.carritoDisplay{
+    border: 1px solid black;
+    margin: 1rem;
+}
+
+.carritoDisplay p{
+    margin: 1rem;
+    font-size: 1.5rem;
+}
+
+.carritoTitulo{
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.carritoTotal{
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.buttonCarrito{
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    margin: 10rem 1rem;
+}

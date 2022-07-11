@@ -8,7 +8,8 @@ const Notification = ({message, severity, otherClass}) => {
         right: 5,
         width: "auto",
         height: "auto",
-        color: "#fff",
+        color: "#000",
+        background: "#fff",
         padding: "1rem 2rem",
         borderRadius: "1rem"
     }

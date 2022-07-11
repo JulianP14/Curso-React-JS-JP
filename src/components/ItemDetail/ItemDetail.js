@@ -19,28 +19,25 @@ const ItemDetail = ({id, name, category, stock, img, price, description}) => {
     }
 
     return (
-        <div>
-            <h2 className='tituloItemDetail'>
-                {name}
-            </h2>
-            <div className='TID__divImg'>
-                <img src={img} alt={name}></img>
-                <div>
-                    <p className='TID__price'>
-                        ${price}
-                    </p>
-                    <p className='TID__description'>
-                        Descripcion:{description}
-                    </p>
-                    <p>
-                        Categoria:{category}
-                    </p>
-                </div>    
+        <section className='sectionItemDetail'>
+            <header>
+                <h2 className='tituloItemDetail'>{name}</h2>
+            </header>
+            <picture className='TID__divImg' >
+                <img src={img} alt={name} className='TID__divImg'/>
+            </picture>
+            <div className='info'>
+                <p className='TID__description'>
+                    {description}
+                </p>
+                <p className='TID__price'>
+                    Precio: ${price}
+                </p>
             </div>
-            <div>
-                {Qadded === 0 ? <ItemCount stock={stock} onAdd={() => handleOnAdd(Qadded)}/> : <Link to='/cart'>Finalizar Compra</Link> }
-            </div>
-        </div>
+            <footer className='footerCompra'>
+                {Qadded === 0 ? <ItemCount stock={stock} onAdd={handleOnAdd}/> : <Link to='/cart' className='finalizarCompra'>Finalizar Compra</Link>}
+            </footer>
+        </section>
     )
 }
 export default ItemDetail

@@ -1,7 +1,12 @@
+.sectionItemDetail{
+    border: 1px solid black;
+    padding: 0 20rem 0 20rem;
+}
+
 .tituloItemDetail{
     border: 1px solid #000;
     background-color: #fff;
-    margin: 0rem 40rem;
+    margin: 0rem 30rem;
     padding: 1rem 0rem;
     display: flex;
     flex-direction: column;
@@ -10,7 +15,6 @@
 }
 
 .TID__divImg{
-/*     border: 1px solid #000; */
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -19,16 +23,26 @@
 }
 
 .TID__divImg img{
-/*     border: 1px solid #000; */
     display: flex;
     flex-direction: column;
     width: 25%;
     
 }
 
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .TID__description{
-    font-size: 2rem;
     color: #fff;
+    padding: 1rem;
+    margin: 0 rem;
+    width: 10%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .TID__price{
@@ -36,4 +50,18 @@
     font-size: 2rem;
     margin: 1rem;
     padding: 1rem;
+}
+
+
+.footerCompra{
+    padding: 3rem;
+    font-size: 2rem;
+}
+
+.finalizarCompra{
+    padding: 1rem;
+    background-color: #000;
+    color:#fff;
+    margin: 1rem;
+    border-radius: 1rem;
 }

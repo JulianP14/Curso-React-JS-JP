@@ -4,12 +4,12 @@ import CartItemList from "../CartItemList/CartItemList"
 import { useNotification } from "../../notification/Notification"
 import { addDoc, collection, writeBatch, getDocs, query, where, documentId, } from 'firebase/firestore'
 import { database } from '../../services/firebase/index'
+import './Cart.css'
 
 const Carrito = () => {
     const [loading, setLoading] = useState(false)
-    const { carrito, totalQ, getTotal, clearCarrito } = useContext (CartContext)
-
-    const total = getTotal ()
+    const { carrito, totalQ, obtenerTotal, borrarCarrito } = useContext (CartContext)
+    const total = obtenerTotal ()
     const setNotification = useNotification ()
 
     const handleCreateOrder = () =>{
@@ -53,7 +53,7 @@ const Carrito = () => {
                 }
             }).then(({id}) =>{
                 batch.commit()
-                clearCarrito()
+                borrarCarrito()
                 setNotification('success',`Su orden ha sido generada correctamente. El id de su orden es: ${id}`)
             }).catch(error =>{
                 if(error.type === 'sin_stock'){
@@ -76,15 +76,23 @@ const Carrito = () => {
                 <h2>No hay productos en el carrito</h2>
             )
         }
+
+        console.log(handleCreateOrder)
             
         return (
-            <>
-                <h2>Carrito</h2>
+            <section className="carritoDisplay">
+                <div>
+                    <h2 className="carritoTitulo">Carrito</h2>
+                </div>
+
                 <CartItemList productsAdded={carrito}/>
-                <h3>Total:${total}</h3>
-                <button onClick={() => clearCarrito()} className="buttonCarrito">Vaciar Carrito</button>
+
+                <>
+                    <h3 className="carritoTotal">Total:${total}</h3>
+                </>
+                <button onClick={() => borrarCarrito()} className="buttonCarrito">Vaciar Carrito</button>
                 <button onClick={handleCreateOrder} className="buttonCarrito">Generar Orden</button>
-            </>
+            </section>
         )
 }
 

@@ -3,10 +3,10 @@ import CartContext from "../../context/CartContext";
 import './CartItem.css'
 
 const CartItem = ({id, name, Q, price}) => {
-    const {removeItem} = useContext (CartContext)
+    const {removerItem} = useContext (CartContext)
 
     const handleRemove = (id) => {
-        removeItem(id)
+        removerItem(id)
     }
 
         return (
@@ -17,6 +17,7 @@ const CartItem = ({id, name, Q, price}) => {
                 <div>
                     <p>Cantidad:{Q}</p>
                     <p>Precio por Unidad: ${price}</p>
+                    
                 </div>
                 <footer>
                     <p>Subtotal: ${price * Q}</p>
