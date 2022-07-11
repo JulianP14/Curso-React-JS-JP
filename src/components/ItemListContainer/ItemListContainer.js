@@ -4,8 +4,8 @@ import { getDocs, collection, query, where } from 'firebase/firestore'
 import { database } from '../../services/firebase'
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-import { useAsync } from '../../hooks/useAsync'
-import { obtenerProductos } from '../../services/firebase/firestore'
+/* import { useAsync } from '../../hooks/useAsync'
+import { obtenerProductos } from '../../services/firebase/firestore' */
 
 const ItemListContainer = (props) => {
 /*    const {categoryId} = useParams ()

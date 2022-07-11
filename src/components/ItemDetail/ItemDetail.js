@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import { useNotification } from '../../notification/Notification.js'
 
 
-const ItemDetail = ({id, name, category, stock, img, price, description}) => {
+const ItemDetail = ({id, name, stock, img, price, description}) => {
     const [Qadded, setQadded] = useState(0)
     const {agregarItem} = useContext(CartContext)
     const setNotification = useNotification()
