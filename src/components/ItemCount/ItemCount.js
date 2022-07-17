@@ -24,13 +24,10 @@ const ItemCount = ({stock = 0, inicial = 1, onAdd})=> {
                 <h3 className="numeroContador">{Q}</h3>
                 <button className="botonContadorMas" onClick={sumar}>+</button>
             </div>
-                <button className="botonReset" onClick={() => parseInt(onAdd(Q))}> Agregar al carrito</button>
+                <button className="botonReset" onClick={() => onAdd(Q)}> Agregar al carrito</button>
             </div>
     )
 }
 
-/* const SeAgregaron = (Q) => {
-    console.log('Se agregaron' ${Q} ${name})
-} */
 
 export default ItemCount

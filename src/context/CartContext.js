@@ -26,10 +26,13 @@ const CartContext = createContext()
         
         useEffect (() =>{
             let totalQ = 0
+            console.log("carrito:" + carrito)
+            if(carrito){
             carrito.forEach(prod => {
                 totalQ += prod.quantity
             })
             setTotalQ(totalQ)
+        }
         }, [carrito])
         
         const agregarItem = (agregarProducto) => {

@@ -17,10 +17,10 @@ const Carrito = () => {
 
         const objOrden = {
             comprador: {
-                name: 'JP',
-                email: 'jp@jp.com',
-                phone: '1111111111',
-                address: 'JP 123'
+                name: '',
+                email: '',
+                phone: '',
+                address: ''
             }, 
             items: carrito,
             total: total
@@ -80,6 +80,7 @@ const Carrito = () => {
         console.log(handleCreateOrder)
             
         return (
+            
             <section className="carritoDisplay">
                 <div>
                     <h2 className="carritoTitulo">Carrito</h2>

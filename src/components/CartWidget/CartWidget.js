@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const CartWidget = () => {
     const{ getCartQ, totalQ } = useContext (CartContext)
     const navigate = useNavigate ()
+    
 
     return(
         <div className="cartWidget" onClick={() => navigate('/cart')}>
